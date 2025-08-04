@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1754336010274,
+  "lastUpdate": 1754340971708,
   "repoUrl": "https://github.com/paritytech/polkadot-sdk",
   "entries": {
     "availability-recovery-regression-bench": [
@@ -66563,6 +66563,50 @@ window.BENCHMARK_DATA = {
           {
             "name": "test-environment",
             "value": 0.19774564083333332,
+            "unit": "seconds"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "22696121+sekisamu@users.noreply.github.com",
+            "name": "sekiseki",
+            "username": "sekisamu"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "59fb2e7482d471a7ec4e8d3b30499497efa7b34c",
+          "message": "Fixes dust balance handling for pallet revive (#9357)\n\nfix issue: https://github.com/paritytech/contract-issues/issues/141\n\nCorrects the condition for minting a new currency unit when transferring\ndust. The condition was incorrectly checking\n`to_info.dust.saturating_add(dust) >= plank` which could lead to\nunexpected minting behavior. It now correctly checks if `to_info.dust >=\nplank` before minting.",
+          "timestamp": "2025-08-04T19:36:58Z",
+          "tree_id": "1f82f1472637c5b251995d04a7f494c144c5daf4",
+          "url": "https://github.com/paritytech/polkadot-sdk/commit/59fb2e7482d471a7ec4e8d3b30499497efa7b34c"
+        },
+        "date": 1754340954145,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Received from peers",
+            "value": 307203,
+            "unit": "KiB"
+          },
+          {
+            "name": "Sent to peers",
+            "value": 1.6666666666666665,
+            "unit": "KiB"
+          },
+          {
+            "name": "test-environment",
+            "value": 0.19475883183333334,
+            "unit": "seconds"
+          },
+          {
+            "name": "availability-recovery",
+            "value": 11.17734721486667,
             "unit": "seconds"
           }
         ]
