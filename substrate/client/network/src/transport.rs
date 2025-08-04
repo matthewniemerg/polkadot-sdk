@@ -47,7 +47,7 @@ pub use libp2p::bandwidth::BandwidthSinks;
 
 pub struct NetworkConfig {
 	/// Our network identity.
-	pub keypair: Keypair,
+	pub keypair: identity::Keypair,
 	/// Indicates whether created [`Transport`] should be only memory-based.
 	pub memory_only: bool,
 	/// Window size of the muxer.
