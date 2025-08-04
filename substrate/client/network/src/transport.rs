@@ -31,9 +31,9 @@ use std::{sync::Arc, time::Duration};
 
 
 use futures::{AsyncRead, AsyncWrite};
-use std::time::Duration;
 
-pub use libp2p::bandwidth::BandwidthSinks;
+
+
 
 
 
