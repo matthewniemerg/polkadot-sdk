@@ -23,7 +23,7 @@ use frame_support::{
 	DefaultNoBound,
 };
 use sp_core::Get;
-use sp_runtime::{traits::Zero, DispatchError};
+use sp_runtime::{traits::Zero, DispatchError, Saturating};
 
 #[cfg(test)]
 use std::{any::Any, fmt::Debug};

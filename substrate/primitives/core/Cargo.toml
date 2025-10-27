@@ -85,7 +85,7 @@ serde_json = { workspace = true, default-features = true }
 [features]
 default = ["std"]
 std = [
-	"ark-vrf?/std",
+	"ark-vrf?/std", # maybe comment this out ...
 	"bip39/rand",
 	"bip39/std",
 	"blake2/std",
