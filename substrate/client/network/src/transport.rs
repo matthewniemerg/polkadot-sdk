@@ -26,12 +26,25 @@ use libp2p::{
 		upgrade,
 	},
 	dns, identity, noise, tcp, websocket, PeerId, Transport, TransportExt,
+	identity::Keypair,
 };
 use std::{sync::Arc, time::Duration};
 
 // TODO: Create a wrapper similar to upstream `BandwidthTransport` that tracks sent/received bytes
 #[allow(deprecated)]
 pub use libp2p::bandwidth::BandwidthSinks;
+
+pub struct NetworkConfig {
+	/// Our network identity.
+
+	pub keypair: Keypair,
+	/// Indicates whether created [`Transport`] should be only memory-based.
+	pub memory_only: bool,
+	/// Window size of the muxer.
+	pub muxer_window_size: Option<u32>,
+	/// Buffer size of the muxer.
+	pub muxer_maximum_buffer_size: usize,
+}
 
 /// Builds the transport that serves as a common ground for all connections.
 ///
